@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'NKJNIsns64da'
 
 class MortgageCalculatorForm(FlaskForm):#класс формы для калькулятора ипотеки
-    loan_amount = IntegerField( validators=[DataRequired(), NumberRagit remote add origin https://github.com/Maaaaaaxim/ppnir.gitnge(min=1)], render_kw={"placeholder": "Сумма кредита"})#сумма
+    loan_amount = IntegerField( validators=[DataRequired(), NumberRange(min=1)], render_kw={"placeholder": "Сумма кредита"})#сумма
     interest_rate = IntegerField(validators=[DataRequired(), NumberRange(min=1)], render_kw={"placeholder": "Процентная ставка"})#проценты
     loan_term = IntegerField( validators=[DataRequired(), NumberRange(min=1)], render_kw={"placeholder": "Срок кредита"})#срок
 
