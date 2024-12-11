@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Mortgage Payment Result</title>
+   <style>
+      body, html {
+            margin: 0; /* СѓР±РёСЂР°РµС‚ РѕС‚СЃС‚СѓРїС‹ Рё РїРѕР»СЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ*/
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-image: url('static/123.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+      .rectangle {
+            width: 380px;
+            height: 412px;
+            border-radius: 20px;
+            background-color: rgb(0,0,0);
+            position: absolute;
+            top: 170px;
+            left: 170px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px; /* РћС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            color: white;
+            box-sizing: border-box; /* Р’РєР»СЋС‡Р°РµС‚ padding РІ РѕР±С‰СѓСЋ С€РёСЂРёРЅСѓ */
+        }
+      h1 {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+      p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px; /* РѕС‚СЃС‚СѓРї РґР»СЏ СѓРґРѕР±СЃС‚РІР° С‡С‚РµРЅРёСЏ */
+            background-color: white; /* Р±РµР»С‹Р№ С„РѕРЅ РґР»СЏ СЃСѓРјРјС‹ */
+            padding: 10px 20px; /* РІРЅСѓС‚СЂРµРЅРЅРёРµ РѕС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            border-radius: 10px; /* СЃРєСЂСѓРіР»РµРЅРёРµ СѓРіР»РѕРІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            border: 1px solid #ccc; /* Р»С‘РіРєР°СЏ СЂР°РјРєР° РґР»СЏ РєРѕРЅС‚СЂР°СЃС‚Р° */
+            box-sizing: border-box; /* РІРєР»СЋС‡Р°РµС‚ padding Рё border РІ РѕР±С‰СѓСЋ С€РёСЂРёРЅСѓ */
+            color: black;
+            margin-top: 10px;
+        }
+      a {
+          text-align: center;
+          color: rgb(256, 256, 256); /* Р±РµР»С‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р° */
+          text-decoration: none; /* СѓР±РёСЂР°РµРј РїРѕРґС‡С‘СЂРєРёРІР°РЅРёРµ */
+          font-size: 36px;
+          display: inline-block; /* СЃСЃС‹Р»РєР° Р±СѓРґРµС‚ РІРµСЃС‚Рё СЃРµР±СЏ РєР°Рє Р±Р»РѕС‡РЅС‹Р№ СЌР»РµРјРµРЅС‚ */
+          width: 100%; /* С€РёСЂРёРЅР° РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ */
+          padding: 10px 20px; /* СѓРІРµР»РёС‡РёРІР°РµРј РІРЅСѓС‚СЂРµРЅРЅРёРµ РѕС‚СЃС‚СѓРїС‹ РґР»СЏ РєРЅРѕРїРєРё */
+          border: 1px solid #ccc;
+          border-radius: 15px;
+          box-sizing: border-box;
+          background-color: black; /* Р¦РІРµС‚ С„РѕРЅР° РґР»СЏ РєРЅРѕРїРєРё */
+          text-align: center;
+          margin: 0 auto; /* Р¦РµРЅС‚СЂРёСЂСѓРµРј СЌР»РµРјРµРЅС‚ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕ */
+          margin-top: 50px;
+      }
+      a:hover {
+            text-decoration: underline; /* РџРѕРґС‡С‘СЂРєРёРІР°РЅРёРµ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
+        }
+   </style>
+</head>
+<body>
+   <div class="rectangle">
+      <h1>Ежемесячный платеж:</h1>
+      <p>{{ monthly_payment | round(2) }} руб.</p>
+      <a href="{{ url_for('mortgage_calculator') }}">Заново</a>
+   </div>
+   </body>
+</html>

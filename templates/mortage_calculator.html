@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;/* СѓР±РёСЂР°РµРј РїСЂРѕРєСЂСѓС‚РєСѓ */
+            background-image: url('static/123.png');
+            background-size: cover; /* С„РѕРЅ РЅР° РІРµСЃСЊ СЌРєСЂР°РЅ */
+            background-position: center; /*С†РµРЅС‚СЂРёСЂСѓРµС‚ С„РѕРЅРѕРІРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ*/
+            background-repeat: no-repeat;
+        }
+        .rectangle { /*РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє*/
+            width: 380px;
+            height: 412px;
+            border-radius: 20px; /* РѕРєСЂСѓРіР»РµРЅРёРµ */
+            background-color: white; /* Р±РµР»С‹Р№ С„РѕРЅ*/
+            position: absolute;
+            top: 170px;
+            left: 170px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);/* С‚РµРЅСЊ */
+            padding: 20px; /* РћС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            box-sizing: border-box; /* Р’РєР»СЋС‡Р°РµС‚ padding РІ РѕР±С‰СѓСЋ С€РёСЂРёРЅСѓ */
+        }
+        h1 {
+            text-align: center; /* С‚РµРєСЃС‚ РїРѕ С†РµРЅС‚СЂСѓ */
+            font-size: 28px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        form div {
+            margin-bottom: 20px; /* РѕС‚СЃС‚СѓРї РјРµР¶РґСѓ РІРІРѕРґР°РјРё */
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc; /* СЃРµСЂР°СЏ СЂР°РјРєР° */
+            border-radius: 15px;
+            box-sizing: border-box;
+        }
+        span {
+            font-size: 12px;
+        }
+        input[type="submit"] {
+            background-color: rgb(0,0,0);
+            color: white;
+            border: none; /*СѓР±РёСЂР°РµС‚ СЂР°РјРєСѓ РІРѕРєСЂСѓРі РєРЅРѕРїРєРё*/
+            cursor: pointer; /* РјРµРЅСЏРµС‚ РєСѓСЂСЃРѕСЂ РЅР° СѓРєР°Р·Р°С‚РµР»СЊ*/
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        input[type="submit"]:hover {
+            background-color: rgb(187,223,51); /* СЃРјРµРЅР° С†РІРµС‚Р° РїСЂРё РЅР°РІРµРґРµРЅРёРё*/
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">
+        <h1>Калькулятор ежемесячный платежей</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.loan_amount(size=32) }}
+                {% for error in form.loan_amount.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.interest_rate(size=32) }}
+                {% for error in form.interest_rate.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.loan_term(size=32) }}
+                {% for error in form.loan_term.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+</body>
+</html>
