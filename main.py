@@ -8,21 +8,21 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'NKJNIsns64da'
 
 class MortgageCalculatorForm(FlaskForm):#РєР»Р°СЃСЃ С„РѕСЂРјС‹ РґР»СЏ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂР° РёРїРѕС‚РµРєРё
-    loan_amount = IntegerField( validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     СУММА КРЕДИТА"})°
-    interest_rate = IntegerField(validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     ПРОЦЕНТНАЯ СТАВКА"})#РїСЂРѕС†РµРЅС‚С‹
-    loan_term = IntegerField( validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     СРОК КРЕДИТА(В ГОДАХ)"})#СЃСЂРѕРє
+    loan_amount = IntegerField( validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     СУММА КРЕДИТА"})
+    interest_rate = IntegerField(validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     ПРОЦЕНТНАЯ СТАВКА"})
+    loan_term = IntegerField( validators=[DataRequired(),  NumberRange(min=1)], render_kw={"placeholder": "     СРОК КРЕДИТА(В ГОДАХ)"})
 
     submit = SubmitField('РАССЧИТАТЬ')
 @app.route('/', methods=['GET', 'POST'])
 def mortgage_calculator():
-    form = MortgageCalculatorForm()# СЃРѕР·РґР°РµРј С„РѕСЂРјСѓ
-    if form.validate_on_submit():#РІ СЃР»СѓС‡Р°Рµ РµСЃР»Рё С„РѕСЂРјР° РЅРѕСЂРјР°Р»СЊРЅР°СЏ
+    form = MortgageCalculatorForm()
+    if form.validate_on_submit():
         loan_amount = form.loan_amount.data
-        interest_rate = form.interest_rate.data / 100 / 12  # РџСЂРµРѕР±СЂР°Р·СѓРµРј РІ РјРµСЃСЏС‡РЅСѓСЋ СЃС‚Р°РІРєСѓ
-        loan_term_months = form.loan_term.data * 12  # РџСЂРµРѕР±СЂР°Р·СѓРµРј РІ РјРµСЃСЏС†С‹
+        interest_rate = form.interest_rate.data / 100 / 12  
+        loan_term_months = form.loan_term.data * 12  
 
-        # С„РѕСЂРјСѓР»Р° СЂР°СЃС‡РµС‚Р° РµР¶РµРјРµСЃСЏС‡РЅРѕРіРѕ РїР»Р°С‚РµР¶Р° РїРѕ РёРїРѕС‚РµРєРµ
-        monthly_payment = (# Р°РЅРЅСѓРёС‚РµРЅС‚РЅР°СЏ
+       
+        monthly_payment = (
                 loan_amount * interest_rate / (1 - (1 + interest_rate) ** -loan_term_months)
         )
 
