@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
    <title>Mortgage Payment Result</title>
    <style>
       body, html {
@@ -14,52 +15,68 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+       .logo {
+            position: relative;
+            width: 130px;
+            height: 60px;
+            top: 20px;
+            left: 30px;
+        }
       .rectangle {
-            width: 380px;
-            height: 412px;
+            width: 500px;
+            height: 470px;
             border-radius: 20px;
             background-color: rgb(0,0,0);
             position: absolute;
             top: 170px;
-            left: 170px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            left: 130px;
             padding: 20px; /* РћС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
             color: white;
             box-sizing: border-box; /* Р’РєР»СЋС‡Р°РµС‚ padding РІ РѕР±С‰СѓСЋ С€РёСЂРёРЅСѓ */
         }
       h1 {
+            font-family: 'Dela Gothic One', Times new roman;
             text-align: center;
-            font-size: 38px;
-            margin-bottom: 20px;
-            margin-top: 30px;
+            font-size: 28px;
+            margin-bottom: 10px;
+            margin-top: 70px;
         }
       p {
+            width: 80%;
+            display: block;
+            margin: 0 auto;
             text-align: center;
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 30px; /* РѕС‚СЃС‚СѓРї РґР»СЏ СѓРґРѕР±СЃС‚РІР° С‡С‚РµРЅРёСЏ */
             background-color: white; /* Р±РµР»С‹Р№ С„РѕРЅ РґР»СЏ СЃСѓРјРјС‹ */
-            padding: 10px 20px; /* РІРЅСѓС‚СЂРµРЅРЅРёРµ РѕС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
-            border-radius: 10px; /* СЃРєСЂСѓРіР»РµРЅРёРµ СѓРіР»РѕРІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            padding: 15px 20px; /* РІРЅСѓС‚СЂРµРЅРЅРёРµ РѕС‚СЃС‚СѓРїС‹ РІРЅСѓС‚СЂРё РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
+            border-radius: 25px; /* СЃРєСЂСѓРіР»РµРЅРёРµ СѓРіР»РѕРІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР° */
             border: 1px solid #ccc; /* Р»С‘РіРєР°СЏ СЂР°РјРєР° РґР»СЏ РєРѕРЅС‚СЂР°СЃС‚Р° */
             box-sizing: border-box; /* РІРєР»СЋС‡Р°РµС‚ padding Рё border РІ РѕР±С‰СѓСЋ С€РёСЂРёРЅСѓ */
             color: black;
-            margin-top: 10px;
+            margin-top: 30px;
+            box-shadow:
+                inset 0 4px 8px rgba(0, 0, 0, 0.1), /* Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ С‚РµРЅСЊ СЃРЅРёР·Сѓ */
+                inset 0 -4px 8px rgba(0, 0, 0, 0.2), /* Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ С‚РµРЅСЊ СЃРІРµСЂС…Сѓ */
+                inset 4px 0 8px rgba(0, 0, 0, 0.1), /* Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ С‚РµРЅСЊ СЃР»РµРІР° */
+                inset -4px 0 8px rgba(0, 0, 0, 0.2); /* Р’РЅСѓС‚СЂРµРЅРЅСЏСЏ С‚РµРЅСЊ СЃРїСЂР°РІР° */
         }
       a {
+          font-family: 'Dela Gothic One', Times new roman;
           text-align: center;
           color: rgb(256, 256, 256); /* Р±РµР»С‹Р№ С†РІРµС‚ С‚РµРєСЃС‚Р° */
           text-decoration: none; /* СѓР±РёСЂР°РµРј РїРѕРґС‡С‘СЂРєРёРІР°РЅРёРµ */
-          font-size: 36px;
+          font-size: 23px;
           display: inline-block; /* СЃСЃС‹Р»РєР° Р±СѓРґРµС‚ РІРµСЃС‚Рё СЃРµР±СЏ РєР°Рє Р±Р»РѕС‡РЅС‹Р№ СЌР»РµРјРµРЅС‚ */
-          width: 100%; /* С€РёСЂРёРЅР° РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ */
+          width: 60%; /* С€РёСЂРёРЅР° РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ */
           padding: 10px 20px; /* СѓРІРµР»РёС‡РёРІР°РµРј РІРЅСѓС‚СЂРµРЅРЅРёРµ РѕС‚СЃС‚СѓРїС‹ РґР»СЏ РєРЅРѕРїРєРё */
           border: 1px solid #ccc;
           border-radius: 15px;
           box-sizing: border-box;
           background-color: black; /* Р¦РІРµС‚ С„РѕРЅР° РґР»СЏ РєРЅРѕРїРєРё */
-          text-align: center;
           margin: 0 auto; /* Р¦РµРЅС‚СЂРёСЂСѓРµРј СЌР»РµРјРµРЅС‚ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕ */
-          margin-top: 50px;
+          margin-top: 110px;
+          display: block;
       }
       a:hover {
             text-decoration: underline; /* РџРѕРґС‡С‘СЂРєРёРІР°РЅРёРµ РїСЂРё РЅР°РІРµРґРµРЅРёРё */
@@ -67,10 +84,11 @@
    </style>
 </head>
 <body>
+   <img src="static/logo.png" class="logo">
    <div class="rectangle">
-      <h1>Ежемесячный платеж:</h1>
+      <h1>ЕЖЕМЕСЯЧНЫЙ ПЛАТЕЖ:</h1>
       <p>{{ monthly_payment | round(2) }} руб.</p>
-      <a href="{{ url_for('mortgage_calculator') }}">Заново</a>
+      <a href="{{ url_for('mortgage_calculator') }}">ЗАНОВО</a>
    </div>
    </body>
 </html>
